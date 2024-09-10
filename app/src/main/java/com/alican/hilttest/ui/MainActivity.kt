@@ -57,10 +57,5 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         binding.bottomNavigationView.setupWithNavController(navController)
     }
-    private fun loadWordsFromJson(): List<Word> {
-        val inputStream = assets.open("words.json")
-        val reader = InputStreamReader(inputStream)
-        val wordType = object : TypeToken<List<Word>>() {}.type
-        return Gson().fromJson(reader, wordType)
-    }
+
 }
